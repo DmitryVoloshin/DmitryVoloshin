@@ -35,4 +35,3 @@ swapi.getAllPeople().then( (people)=>{
 });
 
 
-console.log('lol sqrt')
