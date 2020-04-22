@@ -4,11 +4,12 @@ import './pre-content.css';
 
 import  SwapiService from '../../services/service'
 
-export default class RandomPlanet extends Component {
+export default class PreContent extends Component {
 
   swapiService = new SwapiService();
 
   state = { 
+    id:null,
     population: null,
     rotationPeriod: null,
     diameter: null,
@@ -21,27 +22,23 @@ export default class RandomPlanet extends Component {
   }
 
   updatePreContent(){
+    const id = Math.floor(Math.random()*25)+2;
     this.swapiService
-      .getPlanet(7)
+      .getPlanet(id)
       .then((planet) => {
-        this.setState({
-          name: planet.name,
-          population: planet.population,
-          rotationPeriod: planet.rotation_period,
-          diameter: planet.diameter
-        });
+        this.setState();
       });
   }
 
   render() {
 
 
-    const { name,population,rotationPeriod,diameter } = this.state; 
+    const { id,name,population,rotationPeriod,diameter } = this.state; 
 
     return (
       <div className="pre-content jumbotron rounded">
         <img className="the-image"
-             src="https://starwars-visualguide.com/assets/img/planets/5.jpg" alt="some-pic" />
+             src={`https://starwars-visualguide.com/assets/img/planets/${id}.jpg`} alt="some-pic" />
         <div>
           <h3>{name}</h3>
           <ul className="list-group list-group-flush">

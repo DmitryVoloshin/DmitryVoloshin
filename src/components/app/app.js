@@ -12,7 +12,6 @@ const App = () => {
     <div className="main-block">
       <Header />
       <PreContent />
-
       <div className="row mb2">
         <div className="col-md-6">
         <PersonAbout />
