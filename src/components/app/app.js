@@ -1,17 +1,18 @@
 import React from 'react';
 
 import Header from '../header';
-import PreContent from '../pre-content';
 import ItemList from '../item-list';
 import PersonAbout from '../person-about';
+import RandomPlanet from '../random-planet/random-planet';
 
 import './app.css';
+
 
 const App = () => {
   return (
     <div className="main-block">
       <Header />
-      <PreContent />
+      <RandomPlanet />
       <div className="row mb2">
         <div className="col-md-6">
         <PersonAbout />
