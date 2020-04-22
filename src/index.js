@@ -4,19 +4,38 @@ import App from './components/app';
 
 
 
-const getResource = async ( url ) =>{
-    const res = await fetch( url );
-    const body = await res.json();
-    return body;
-};
 
-getResource('https://swapi.dev/api/people/1/')
-    .then((body) => {
-        console.log(body);
-    })
-    .catch((err) => {
-        console.log(err)
-    });
+//Клас для инкапсуляции сетевого кода
+class SwapiService{
+
+    _apiBase = 'https://swapi.dev/api'
+ 
+    async getResource(url){
+    const res = await fetch(`${this._apiBase}${url}`);
+
+    if(!res.ok){
+        throw new Error(`its not fetch trouble`)
+    }
+    return await res.json()  
+   }
+
+    async getAllPeople(){
+      const res = await this.getResource(`/people/`);
+      return res.results;
+   }
+   getPerson(id){
+       return this.getResource(`/people/${id}/`)
+   }
+
+}
+
+const swapi = new SwapiService();
+swapi.getAllPeople().then((people)=> 
+    console.log(people.forEach((p)=>{
+        console.log(p.name)
+    })))
+
+  
 
 
 
