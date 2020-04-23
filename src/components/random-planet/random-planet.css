@@ -1,0 +1,18 @@
+.random-planet_block{
+    margin: 30px 30px 30px 30px;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid gray;
+    border-radius: 7px;
+}
+.random-planet_img{
+    padding-left: 100px;
+    padding-right: 50px;
+}
+.random-planet_list{
+    display: flex;
+    flex-direction: column;
+}
+.planet-list_item{
+    padding-bottom: 10px;
+}
