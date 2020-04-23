@@ -1,0 +1,18 @@
+.header{
+    margin: 30px 30px 30px 30px;
+    height: 50px;
+    font-size:20px;
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.header-nav_links{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 140px;
+}
+.item{
+    padding-right: 20px;
+}
