@@ -6,9 +6,12 @@
     border-radius: 7px;
 }
 .random-planet_img{
-    padding-left: 100px;
+    padding-left: 50px;
     padding-right: 50px;
     padding-top: 10px;
+    padding-bottom: 10px;
+    height: 150px;
+    width: 150px;
 }
 .random-planet_list{
     display: flex;
