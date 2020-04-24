@@ -1,0 +1,14 @@
+.item-list_block{
+    margin: 30px 30px 30px 30px;
+    width: 35%;
+    border: 1px solid black;
+    background-color: rgb(179, 168, 168);
+    border-radius: 10px;
+}
+.list-item{
+    padding-bottom: 10px;
+    padding-left: 50px;
+}
+.item-list_first{
+    padding-top: 20px;
+}

@@ -55,4 +55,7 @@
   animation:move-twink-back 200s linear infinite;
 } 
 
-
+.main-content_block{
+    display: flex;
+    flex-direction: row;
+}

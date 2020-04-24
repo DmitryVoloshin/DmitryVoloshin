@@ -2,16 +2,18 @@
     margin: 30px 30px 30px 30px;
     display: flex;
     flex-direction: row;
-    border: 1px solid gray;
+    border: 1px solid black;
     border-radius: 7px;
 }
 .random-planet_img{
     padding-left: 100px;
     padding-right: 50px;
+    padding-top: 10px;
 }
 .random-planet_list{
     display: flex;
     flex-direction: column;
+    padding-top: 10px;
 }
 .planet-list_item{
     padding-bottom: 10px;
