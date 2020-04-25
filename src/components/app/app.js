@@ -5,9 +5,11 @@ import Header from './../header';
 import RandomPlanet from '../random-planet';
 import ItemList from '../item-list';
 import PersonDetails from '../person-details';
+import ErrorIndicator from '../error-indicator';
 
 
 import './app.css'
+
 
 
 
@@ -15,7 +17,8 @@ export default class App extends React.Component{
 
   state = {
     showRandomPlanet : true,
-    selectedPerson:null,
+    selectedPerson:5,
+    hasError:false,
   };
 
 
@@ -26,14 +29,20 @@ export default class App extends React.Component{
       }
     });
   };
-
   onPersonSelected = ( id ) =>{
     this.setState( {
       selectedPerson : id
     })
+  };
+  componentDidCatch(){
+    this.setState({hasError:true});
   }
 
   render(){
+
+    if(this.state.hasError){
+      return <ErrorIndicator/>
+    }
 
     const planet = this.state.showRandomPlanet ?
     <RandomPlanet/> :
