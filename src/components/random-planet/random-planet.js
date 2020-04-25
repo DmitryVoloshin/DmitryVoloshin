@@ -7,8 +7,6 @@ import ErrorIndicator from '../error-indicator';
 import './random-planet.css'
 
 
-
-
 class RandomPlanet extends React.Component{
 
    swapiService = new SwapiService();
@@ -19,12 +17,12 @@ class RandomPlanet extends React.Component{
         error:false,
     };
 
-    constructor(){
-        super();
+    componentDidMount(){
         this.updatePlanet();
         setInterval(this.updatePlanet,1500)
-    };
+    }
 
+    
 
     onPlanetLoaded = ( planet ) => {
         this.setState({

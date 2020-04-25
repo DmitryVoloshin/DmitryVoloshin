@@ -11,14 +11,37 @@ import './app.css'
 
 
 
-const App = ( ) =>{
+export default class App extends React.Component{
+
+  state = {
+    showRandomPlanet : true
+  };
+
+
+ toggleRandomPlanet = () => {
+    this.setState((state) => {
+      return {
+        showRandomPlanet: !state.showRandomPlanet
+      }
+    });
+  };
+
+  render(){
+
+    const planet = this.state.showRandomPlanet ?
+    <RandomPlanet/> :
+    null;
+    
     return <div className="main-content">
         
    {/* <div className="stars"></div>
   <div className="twinkling"></div>  */}
     <Header/>
-    <RandomPlanet/>
+    {planet}
 
+    <button className="toggle-button" onClick={this.toggleRandomPlanet}>
+      Toggle
+    </button>
 
     <main className="main-content_block">
     <ItemList/>
@@ -28,5 +51,4 @@ const App = ( ) =>{
 
     </div>
 }
-
-export default App
+}
