@@ -14,7 +14,8 @@ import './app.css'
 export default class App extends React.Component{
 
   state = {
-    showRandomPlanet : true
+    showRandomPlanet : true,
+    selectedPerson:null,
   };
 
 
@@ -26,12 +27,18 @@ export default class App extends React.Component{
     });
   };
 
+  onPersonSelected = ( id ) =>{
+    this.setState( {
+      selectedPerson : id
+    })
+  }
+
   render(){
 
     const planet = this.state.showRandomPlanet ?
     <RandomPlanet/> :
     null;
-    
+
     return <div className="main-content">
         
    {/* <div className="stars"></div>
@@ -44,8 +51,8 @@ export default class App extends React.Component{
     </button>
 
     <main className="main-content_block">
-    <ItemList/>
-    <PersonDetails/>
+    <ItemList onItemSelected={this.onPersonSelected}/>
+    <PersonDetails personId={this.state.selectedPerson}/>
     </main>
 
 

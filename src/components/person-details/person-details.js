@@ -2,7 +2,9 @@ import React from 'react';
 
 import './person-details.css'
 
-const PersonDetails = ( ) =>{
+export default class PersonDetails extends React.Component{
+
+    render(){
     return (
         <div className="person-details_list">
             <img alt="person pic" className="person-details_pic"></img>
@@ -26,5 +28,5 @@ const PersonDetails = ( ) =>{
         </div>
     )
 }
+}
 
-export default PersonDetails
