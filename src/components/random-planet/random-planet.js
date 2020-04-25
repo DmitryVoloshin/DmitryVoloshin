@@ -2,9 +2,10 @@ import React from 'react';
 
 import SwapiService from '../../service/service';
 import Loader from '../loader';
-
+import ErrorIndicator from '../error-indicator';
 
 import './random-planet.css'
+
 
 
 
@@ -15,16 +16,16 @@ class RandomPlanet extends React.Component{
     state = {
         planet:{},
         loading:true,
+        error:false,
     };
 
     constructor(){
         super();
-        this.updatePlanet()
+        this.updatePlanet();
+        setInterval(this.updatePlanet,1500)
     };
 
-    onError = ( err ) =>{
 
-    }
     onPlanetLoaded = ( planet ) => {
         this.setState({
             planet,
@@ -32,8 +33,15 @@ class RandomPlanet extends React.Component{
         })
     }
 
-updatePlanet(){
-    const id = Math.floor(Math.random()*25) + 2;
+    onError = ( err ) =>{
+        this.setState({
+            error:true,
+            loading:false,
+        })
+    }
+
+updatePlanet = () =>{
+    const id = Math.floor(Math.random()*25);
     this.swapiService
         .getPlanet(id)
         .then(this.onPlanetLoaded)
@@ -42,12 +50,17 @@ updatePlanet(){
 
 render(){
 
-    const { planet,loading} = this.state
+    const { planet,loading,error} = this.state
 
+    const hasData = !( loading || error )
+
+    const errorMassage = error ? <ErrorIndicator/> : null;
     const loader = loading ? <Loader/> : null;
-    const content = !loading ? <PlanetView planet={planet}/> : null;
+    const content = hasData ? <PlanetView planet={planet}/> : null;
+  
 
     return <div className="random-planet_block">
+          {errorMassage}
           {loader}
           {content}
             </div>
