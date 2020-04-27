@@ -48,8 +48,8 @@ export default class App extends React.Component{
     <RandomPlanet/> :
     null;
 
-    return <div className="main-content">
-        
+    return <div className="main-content stars">
+          <div className="twinkling"></div>  
 
     <Header/>
     {planet}
@@ -58,8 +58,8 @@ export default class App extends React.Component{
       Toggle
     </button>
     <PeoplePage/>
-    {/* <div className="stars"></div>
-  <div className="twinkling"></div>   */}
+
+
 
     <div>
       <div>

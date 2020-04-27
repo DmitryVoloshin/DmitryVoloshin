@@ -4,6 +4,7 @@
     text-decoration: none;
     display: flex;
     flex-direction: row;
+    color: teal;
     /* border: 2px solid black;
     border-radius: 15px; */
 }
@@ -14,11 +15,16 @@
     justify-content: space-between;
     padding-left: 140px;
     padding-top: 15px;
+    color: white;
 }
-
 .item{
     padding-right: 20px;
 }
+
 .head-logo{
     padding-top: 15px;
+}
+
+a{
+    color: rgb(17, 88, 67);
 }

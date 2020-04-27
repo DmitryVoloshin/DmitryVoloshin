@@ -47,7 +47,7 @@
 }
 .twinkling{
   background:transparent url(./twinkling.png) repeat top center;
-  z-index:1;
+  z-index:-1;
   -moz-animation:move-twink-back 200s linear infinite;
   -ms-animation:move-twink-back 200s linear infinite;
   -o-animation:move-twink-back 200s linear infinite;
@@ -61,4 +61,7 @@
 }
 .toggle-button{
     padding-left: 20px;
+}
+.main-content{
+    color:  white;
 }

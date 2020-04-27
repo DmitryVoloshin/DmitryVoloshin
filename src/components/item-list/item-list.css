@@ -1,14 +1,30 @@
 .item-list_block{
     margin: 30px 30px 30px 30px;
     width: 35%;
-    border: 1px solid black;
-    background-color: rgb(179, 168, 168);
+    border: 1px solid rgb(255, 255, 255);
+    background-color: rgba(179, 168, 168, 0);
     border-radius: 10px;
+    height: 250px;
+
 }
 .list-item{
     padding-bottom: 10px;
-    padding-left: 50px;
+
 }
 .item-list_first{
     padding-top: 20px;
+}
+.list-group_item{
+    font-size: 35px;
+    padding-top: 12px;
+    cursor: pointer;
+    padding-left: 18px;
+    border-bottom: 1px solid white;
+}
+.list-group_item:last-child{
+    border-bottom: 1px solid rgba(255, 255, 255, 0);
+}
+
+.list-group_item:last-child{
+    padding-bottom: 10px;
 }
