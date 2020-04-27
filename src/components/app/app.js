@@ -9,15 +9,19 @@ import ErrorIndicator from '../error-indicator';
 
 
 import './app.css'
+import PeoplePage from '../people-page';
+import SwapiService from '../../service/service';
 
 
 
 
 export default class App extends React.Component{
 
+
+  swapiService = new SwapiService();
+
   state = {
     showRandomPlanet : true,
-    selectedPerson:5,
     hasError:false,
   };
 
@@ -29,11 +33,7 @@ export default class App extends React.Component{
       }
     });
   };
-  onPersonSelected = ( id ) =>{
-    this.setState( {
-      selectedPerson : id
-    })
-  };
+
   componentDidCatch(){
     this.setState({hasError:true});
   }
@@ -50,19 +50,26 @@ export default class App extends React.Component{
 
     return <div className="main-content">
         
-   {/* <div className="stars"></div>
-  <div className="twinkling"></div>  */}
+
     <Header/>
     {planet}
 
     <button className="toggle-button" onClick={this.toggleRandomPlanet}>
       Toggle
     </button>
+    <PeoplePage/>
+    {/* <div className="stars"></div>
+  <div className="twinkling"></div>   */}
 
-    <main className="main-content_block">
-    <ItemList onItemSelected={this.onPersonSelected}/>
-    <PersonDetails personId={this.state.selectedPerson}/>
-    </main>
+    <div>
+      <div>
+        <ItemList onItemSelected={this.onPersonSelected}
+        getData={this.swapiService.getAllPlanets}/>
+      </div>
+      <div>
+        <PersonDetails personId={this.state.selectedPerson}/>
+      </div>
+    </div>
 
 
     </div>

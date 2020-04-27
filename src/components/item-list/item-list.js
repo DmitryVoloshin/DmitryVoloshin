@@ -1,5 +1,4 @@
 import React from 'react';
-import SwapiService from '../../service/service';
 import Loader from '../loader';
 
 
@@ -8,19 +7,18 @@ import './item-list.css'
 
 export default class ItemList extends React.Component{
 
-    swapiService = new SwapiService();
-
 
     state ={
-        peopleList:null,
+        itemList:null,
     };
 
     componentDidMount(){
-        this.swapiService
-            .getAllPeople()
-            .then((peopleList)=>{
+
+        const { getData } = this.props;
+
+          getData().then((itemList)=>{
                 this.setState({
-                    peopleList
+                    itemList
                 });
             });
     }
@@ -29,7 +27,7 @@ export default class ItemList extends React.Component{
     renderItems(arr) {
         return arr.map(({id, name}) => {
           return (
-            <li className="list-group-item"
+            <li className="list-group_item"
                 key={id}
                 onClick={() => this.props.onItemSelected(id)}>
               {name}
@@ -41,15 +39,15 @@ export default class ItemList extends React.Component{
 
     render(){
 
-        const { peopleList } = this.state;
+        const { itemList } = this.state;
      
 
-        if(!peopleList){
+        if(!itemList){
             return <Loader/>
         };
 
      
-        const items = this.renderItems(peopleList)
+        const items = this.renderItems(itemList)
 
     return (
         <ul className="item-list_block">
