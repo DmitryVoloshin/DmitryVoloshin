@@ -53,16 +53,17 @@ export default class App extends React.Component{
 
     <Header/>
     {planet}
-
+    <div className="button-block">
     <button className="toggle-button" onClick={this.toggleRandomPlanet}>
       Toggle
     </button>
+    </div>
     <PeoplePage/>
 
 
 
-    <div>
-      <div>
+    <div className="starship-block">
+      <div className="starship-block">
         <ItemList onItemSelected={this.onPersonSelected}
         getData={this.swapiService.getAllPlanets}/>
       </div>

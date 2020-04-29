@@ -60,8 +60,24 @@
     flex-direction: row;
 }
 .toggle-button{
-    padding-left: 20px;
+    width: 180px;
+    height: 45px;
+    font-size: 32px;
+    background-color: teal;
+    border: none;
+    border-radius: 10px;
+    color: white;
+}
+.toggle-button:hover{
+    cursor: pointer;
+    background-color: rgb(15, 190, 190);
 }
 .main-content{
     color:  white;
+}
+.button-block{
+    padding-left: 100px;
+}
+.starship-block{
+    padding-bottom: 100px;
 }
