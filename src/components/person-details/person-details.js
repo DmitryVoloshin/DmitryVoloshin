@@ -51,7 +51,7 @@ export default class PersonDetails extends React.Component{
             <img  src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`}
             alt="person pic" className="person-details_pic"></img>
             <div>
-                <h3 className="person-details_title">{name}{this.props.personId}</h3>
+                <h3 className="person-details_title">{name}</h3>
                 <ul>
                     <li className="person-details_item">
                         <span>Geneder</span>
