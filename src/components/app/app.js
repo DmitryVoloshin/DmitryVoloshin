@@ -65,7 +65,8 @@ export default class App extends React.Component{
     <div className="starship-block">
       <div className="starship-block">
         <ItemList onItemSelected={this.onPersonSelected}
-        getData={this.swapiService.getAllPlanets}/>
+        getData={this.swapiService.getAllPlanets}
+        renderItem={(item)=> (<span>{item.name}<button>H</button></span>)}/>
       </div>
       <div>
         <PersonDetails personId={this.state.selectedPerson}/>
