@@ -4,7 +4,7 @@ import React from 'react';
 import Header from './../header';
 import RandomPlanet from '../random-planet';
 import ItemList from '../item-list';
-import PersonDetails from '../person-details';
+import ItemDetails from '../item-details';
 import ErrorIndicator from '../error-indicator';
 
 
@@ -69,7 +69,7 @@ export default class App extends React.Component{
         renderItem={(item)=> (<span>{item.name}<button>H</button></span>)}/>
       </div>
       <div>
-        <PersonDetails personId={this.state.selectedPerson}/>
+        <ItemDetails personId={this.state.selectedPerson}/>
       </div>
     </div>
 

@@ -2,10 +2,10 @@ import React from 'react';
 import SwapiService from '../../service/service';
 
 
-import './person-details.css'
+import './item-details.css'
 
 
-export default class PersonDetails extends React.Component{
+export default class ItemDetails extends React.Component{
 
     swapiService = new SwapiService();
 
