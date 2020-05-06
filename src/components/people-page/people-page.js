@@ -3,6 +3,18 @@ import ItemList from './../item-list';
 import PersonDetails from '../person-details';
 import ErrorIndicator from '../error-indicator';
 import SwapiService from '../../service/service';
+import Row from '../row';
+
+
+// const Row = ({ leftRow,rightRow}) => {
+//     return(
+//         <div className="main-content_block">
+//         {leftRow}
+//         {rightRow}
+//         </div>
+//     )
+// }
+
 
 export default class PeoplePage extends React.Component{
 
@@ -44,10 +56,7 @@ export default class PeoplePage extends React.Component{
         );
 
         return (
-        <main className="main-content_block">
-        {itemList}
-        {personDetails}
-        </main>
+            <Row leftRow={itemList} rightRow={personDetails}/>
         )
     }
 }
