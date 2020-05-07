@@ -73,7 +73,6 @@ export default class App extends React.Component{
       </div>
     </div>
 
-    <h1>22</h1>
     </div>
 }
 }
