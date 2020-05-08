@@ -45,7 +45,6 @@ export default class PeoplePage extends React.Component{
         return (
             <ErrorBoundry>
             <Row leftRow={itemList} rightRow={personDetails}/>
-            <div></div>
             </ErrorBoundry>
         )
     }
