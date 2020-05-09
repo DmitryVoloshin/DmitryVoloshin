@@ -10,41 +10,42 @@ export default class ItemDetails extends React.Component{
     swapiService = new SwapiService();
 
     state ={
-        person:null,
+        item:null,
     };
 
     //lifecycle start
     componentDidMount(){
-        this.updatePerson();
+        this.updateItem();
     }
 
     componentDidUpdate(prevProps){
-        if(this.props.personId !== prevProps.personId){
-            this.updatePerson();
+        if(this.props.itemId !== prevProps.itemId){
+            this.updateItem();
         }
     }
     //lifecycle end
 
-    updatePerson(){
-        const { personId } = this.props;
-        if(!personId){
+    updateItem(){
+        const { itemId } = this.props;
+        if(!itemId){
             return;
         }
         this.swapiService
-            .getPerson(personId)
-            .then((person)=>{
-                this.setState({person})
+            .getPerson(itemId)
+            .then((item)=>{
+                this.setState({item})
             })
     };
 
     render(){
 
-        if(!this.state.person){
+        const { item } = this.state
+        if(!item){
             return <span>Chose person</span>
         }
 
         const { id, name, gender,
-            birthYear, eyeColor } = this.state.person;
+            birthYear, eyeColor } = item;
 
     return (
         <div className="person-details_list">

@@ -71,25 +71,12 @@ export default class App extends React.Component{
       Toggle
     </button>
     </div>
-    <PeoplePage/>
-    {/* <div className="starship-block">
-      <div className="starship-block">
-        <ItemList onItemSelected={this.onPersonSelected}
-        getData={this.swapiService.getAllPlanets}
-        renderItem={(item)=> (<span>{item.name}<button>H</button></span>)}/>
-      </div>
-      <div>
-        <ItemDetails personId={this.state.selectedPerson}/>
-      </div>
-    </div> */}
+    {/* <PeoplePage/> */}
 
-    {/* <Row
-      leftRow={personDetails}
-      rightRow={starshipDetails}
-    /> */}
-
-
-
+      <Row
+        leftRow={personDetails}
+        rightRow={starshipDetails}
+      />
     </div>
 }
 }
