@@ -11,6 +11,8 @@ import ErrorIndicator from '../error-indicator';
 import './app.css'
 import PeoplePage from '../people-page';
 import SwapiService from '../../service/service';
+import Row from '../row';
+import StarShip from '../starship-page';
 
 
 
@@ -48,6 +50,17 @@ export default class App extends React.Component{
     <RandomPlanet/> :
     null;
 
+
+
+    //NEW
+    const personDetails = (
+      <ItemDetails itemId={11}/>
+    )
+    const starshipDetails = (
+      <ItemDetails itemId={3}/>
+    )
+
+
     return <div className="main-content stars">
           <div className="twinkling"></div>  
 
@@ -59,10 +72,9 @@ export default class App extends React.Component{
     </button>
     </div>
     <PeoplePage/>
+    <StarShip/>
 
-
-
-    <div className="starship-block">
+    {/* <div className="starship-block">
       <div className="starship-block">
         <ItemList onItemSelected={this.onPersonSelected}
         getData={this.swapiService.getAllPlanets}
@@ -71,7 +83,14 @@ export default class App extends React.Component{
       <div>
         <ItemDetails personId={this.state.selectedPerson}/>
       </div>
-    </div>
+    </div> */}
+
+    {/* <Row
+      leftRow={personDetails}
+      rightRow={starshipDetails}
+    /> */}
+
+
 
     </div>
 }
