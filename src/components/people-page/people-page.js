@@ -17,9 +17,6 @@ export default class PeoplePage extends React.Component{
         selectedPerson : 3,
     }
 
-
- 
-
     onPersonSelected = ( selectedPerson ) =>{
         this.setState( {
           selectedPerson
@@ -36,23 +33,18 @@ export default class PeoplePage extends React.Component{
         <ItemList 
              onItemSelected={this.onPersonSelected}
              getData={this.swapiService.getAllPeople}
-
-            //  renderItem={(item)=> `${item.name}(${item.gender},
-            //   ${item.birthYear})`}
-       
-
-
-              >
-                       {(i) => (
+        >
+            {(i) => (
                 `${i.name} (${i.birthYear})`
               )}
+
         </ItemList>
         );
 
         const personDetails = (
-            <ErrorBoundry>
-        <ItemDetails personId={this.state.selectedPerson}/>
-            </ErrorBoundry>
+        <ErrorBoundry>
+            <ItemDetails personId={this.state.selectedPerson}/>
+        </ErrorBoundry>
         );
 
         return (

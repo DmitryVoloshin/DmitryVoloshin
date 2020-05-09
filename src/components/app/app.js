@@ -72,7 +72,6 @@ export default class App extends React.Component{
     </button>
     </div>
     <PeoplePage/>
-
     {/* <div className="starship-block">
       <div className="starship-block">
         <ItemList onItemSelected={this.onPersonSelected}
