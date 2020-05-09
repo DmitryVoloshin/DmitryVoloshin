@@ -27,8 +27,8 @@ export default class ItemList extends React.Component{
     renderItems(arr) {
         return arr.map((item) => {
           const {id} = item;
-
-          const value = this.props.renderItem(item)
+          const value = this.props.children(item)
+          
           return (
             <li className="list-group_item"
                 key={id}

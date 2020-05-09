@@ -72,7 +72,6 @@ export default class App extends React.Component{
     </button>
     </div>
     <PeoplePage/>
-    <StarShip/>
 
     {/* <div className="starship-block">
       <div className="starship-block">
