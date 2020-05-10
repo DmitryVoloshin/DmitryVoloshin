@@ -11,6 +11,7 @@ export default class ItemDetails extends React.Component{
 
     state ={
         item:null,
+        image:null,
     };
 
     //lifecycle start
@@ -26,19 +27,22 @@ export default class ItemDetails extends React.Component{
     //lifecycle end
 
     updateItem(){
-        const { itemId,getData } = this.props;
+        const { itemId,getData,getImage} = this.props;
         if(!itemId){
             return;
         }
         getData(itemId)
             .then((item)=>{
-                this.setState({item})
+                this.setState({
+                    item,
+                    image:getImage(item)
+                })
             })
     };
 
     render(){
 
-        const { item } = this.state
+        const { item,image } = this.state
         if(!item){
             return <span>Chose person</span>
         }
@@ -48,7 +52,7 @@ export default class ItemDetails extends React.Component{
 
     return (
         <div className="person-details_list">
-            <img  src={`https://starwars-visualguide.com/assets/img/characters/${id}.jpg`}
+            <img  src={image}
             alt="person pic" className="person-details_pic"></img>
             <div>
                 <h3 className="person-details_title">{name}</h3>

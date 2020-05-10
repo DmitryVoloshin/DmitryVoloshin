@@ -5,11 +5,11 @@ import Header from './../header';
 import RandomPlanet from '../random-planet';
 import ItemDetails from '../item-details';
 import ErrorIndicator from '../error-indicator';
-
-
-import './app.css'
 import SwapiService from '../../service/service';
 import Row from '../row';
+
+import './app.css'
+
 
 
 export default class App extends React.Component{
@@ -46,22 +46,22 @@ export default class App extends React.Component{
     null;
 
 
-    const { getPerson , getStarship , getPlanet } = this.swapiService;
+    const { getPerson , getStarship,
+            getPersonImage, getStarshipImage 
+          } = this.swapiService;
 
     //NEW
     const personDetails = (
       <ItemDetails itemId={2}
-      getData={getPerson}/>
+      getData={getPerson}
+      getImage={getPersonImage}/>
     )
     const starshipDetails = (
-      <ItemDetails itemId={2}
-      getData={getStarship}/>
+      <ItemDetails itemId={5}
+      getData={getStarship}
+      getImage={getStarshipImage}/>
     )
-    const planetDetails = (
-      <ItemDetails itemId={1}
-      getData={getPlanet}/>
-    )
-
+ 
 
     return <div className="main-content stars">
           <div className="twinkling"></div>  
@@ -77,7 +77,7 @@ export default class App extends React.Component{
 
       <Row
         leftRow={personDetails}
-        rightRow={planetDetails}
+        rightRow={starshipDetails}
       />
     </div>
 }
