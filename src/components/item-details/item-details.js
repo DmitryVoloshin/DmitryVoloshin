@@ -26,12 +26,11 @@ export default class ItemDetails extends React.Component{
     //lifecycle end
 
     updateItem(){
-        const { itemId } = this.props;
+        const { itemId,getData } = this.props;
         if(!itemId){
             return;
         }
-        this.swapiService
-            .getPerson(itemId)
+        getData(itemId)
             .then((item)=>{
                 this.setState({item})
             })

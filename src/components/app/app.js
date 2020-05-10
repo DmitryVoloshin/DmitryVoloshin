@@ -3,18 +3,13 @@ import React from 'react';
 
 import Header from './../header';
 import RandomPlanet from '../random-planet';
-import ItemList from '../item-list';
 import ItemDetails from '../item-details';
 import ErrorIndicator from '../error-indicator';
 
 
 import './app.css'
-import PeoplePage from '../people-page';
 import SwapiService from '../../service/service';
 import Row from '../row';
-import StarShip from '../starship-page';
-
-
 
 
 export default class App extends React.Component{
@@ -51,13 +46,20 @@ export default class App extends React.Component{
     null;
 
 
+    const { getPerson , getStarship , getPlanet } = this.swapiService;
 
     //NEW
     const personDetails = (
-      <ItemDetails itemId={11}/>
+      <ItemDetails itemId={2}
+      getData={getPerson}/>
     )
     const starshipDetails = (
-      <ItemDetails itemId={3}/>
+      <ItemDetails itemId={2}
+      getData={getStarship}/>
+    )
+    const planetDetails = (
+      <ItemDetails itemId={1}
+      getData={getPlanet}/>
     )
 
 
@@ -66,16 +68,16 @@ export default class App extends React.Component{
 
     <Header/>
     {planet}
-    <div className="button-block">
+    {/* <div className="button-block">
     <button className="toggle-button" onClick={this.toggleRandomPlanet}>
       Toggle
     </button>
-    </div>
+    </div> */}
     {/* <PeoplePage/> */}
 
       <Row
         leftRow={personDetails}
-        rightRow={starshipDetails}
+        rightRow={planetDetails}
       />
     </div>
 }

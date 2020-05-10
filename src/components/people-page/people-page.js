@@ -48,9 +48,7 @@ export default class PeoplePage extends React.Component{
         );
 
         return (
-         
             <Row leftRow={itemList} rightRow={personDetails}/>
-           
         )
     }
 }
