@@ -9,6 +9,8 @@ import SwapiService from '../../service/service';
 import Row from '../row';
 
 import './app.css'
+import ItemList from '../item-list/item-list';
+import PeoplePage from '../people-page/people-page';
 
 
 
@@ -47,7 +49,8 @@ export default class App extends React.Component{
 
 
     const { getPerson , getStarship,
-            getPersonImage, getStarshipImage 
+            getPersonImage, getStarshipImage ,
+            getAllPeople
           } = this.swapiService;
 
     //NEW
@@ -75,6 +78,12 @@ export default class App extends React.Component{
         </ItemDetails>
     )
  
+    const peopleList = (
+      <ItemList
+        getData={getAllPeople}
+      >
+      </ItemList>
+    )
 
     return <div className="main-content stars">
           <div className="twinkling"></div>  
@@ -88,10 +97,27 @@ export default class App extends React.Component{
     </div> */}
     {/* <PeoplePage/> */}
 
-      <Row
+      {/* <Row
         leftRow={personDetails}
         rightRow={starshipDetails}
-      />
-    </div>
+      /> */}
+      {/* <Row 
+        leftRow={peopleList}
+        rightRow={peopleList}
+        /> */}
+
+
+        <ItemList
+          getData={this.swapiService.getAllPeople}
+          onItemSelected={()=>{}}>
+            {({name}) => <span>{name}</span>}
+          </ItemList>
+          <ItemList
+          getData={this.swapiService.getAllPeople}
+          onItemSelected={()=>{}}>
+            {({name}) => <span>{name}</span>}
+          </ItemList>
+        
+     </div>
 }
 }

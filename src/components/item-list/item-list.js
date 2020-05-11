@@ -5,52 +5,22 @@ import Loader from '../loader';
 import './item-list.css'
 
 
-export default class ItemList extends React.Component{
+const ItemList = ( props ) =>{
 
+      const { data ,onItemSelected,children: renderValue } = props
 
-    state ={
-        itemList:null,
-    };
-
-    componentDidMount(){
-
-        const { getData } = this.props;
-
-          getData().then((itemList)=>{
-                this.setState({
-                    itemList
-                });
-            });
-    }
-
-
-    renderItems(arr) {
-        return arr.map((item) => {
+        const items = data.map((item) => {
           const {id} = item;
-          const value = this.props.children(item)
+          const value = renderValue(item)
           
           return (
             <li className="list-group_item"
                 key={id}
-                onClick={() => this.props.onItemSelected(id)}>
+                onClick={() => onItemSelected(id)}>
               {value}
             </li>
           );
         });
-      }
-
-
-    render(){
-
-        const { itemList } = this.state;
-     
-
-        if(!itemList){
-            return <Loader/>
-        };
-
-     
-        const items = this.renderItems(itemList)
 
     return (
         <ul className="item-list_block">
@@ -58,5 +28,35 @@ export default class ItemList extends React.Component{
         </ul>
     )
 }
+
+
+
+const withData = ( View ) =>{
+  return class extends React.Component {
+    state ={
+      data:null,
+  };
+  componentDidMount(){
+
+      const { getData } = this.props;
+
+        getData().then((data)=>{
+              this.setState({
+                  data
+              });
+          });
+  }
+    render(){
+
+      const { data } = this.state;
+     
+      if(!data){
+          return <Loader/>
+      };
+
+      return <View {...this.props} data={data}/>
+    }
+  }
 };
 
+export default withData(ItemList);
