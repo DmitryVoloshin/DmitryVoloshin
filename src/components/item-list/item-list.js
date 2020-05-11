@@ -1,8 +1,5 @@
 import React from 'react';
 
-import SwapiService from '../../service/service';
-import { withData } from '../HOC';
-
 import './item-list.css'
 
 
@@ -33,6 +30,4 @@ const ItemList = ( props ) =>{
 }
 
 
-const { getAllPeople } = new SwapiService()
-
-export default withData(ItemList,getAllPeople);
+export default ItemList;

@@ -1,5 +1,6 @@
 import React from 'react';
 import Loader from '../loader'
+import ErrorBoundry from '../error-boundry';
 
 
 const withData = ( View ,getData ) =>{
@@ -8,9 +9,6 @@ const withData = ( View ,getData ) =>{
         data:null,
     };
     componentDidMount(){
-  
-        // const { getData } = this.props;
-  
           getData().then((data)=>{
                 this.setState({
                     data
@@ -25,7 +23,9 @@ const withData = ( View ,getData ) =>{
             return <Loader/>
         };
   
-        return <View {...this.props} data={data}/>
+        return <ErrorBoundry>
+                    <View {...this.props} data={data}/>
+                </ErrorBoundry>
       }
     }
   };

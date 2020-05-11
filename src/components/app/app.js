@@ -6,11 +6,15 @@ import RandomPlanet from '../random-planet';
 import ItemDetails, { Record } from '../item-details';
 import ErrorIndicator from '../error-indicator';
 import SwapiService from '../../service/service';
-import Row from '../row';
+
+
+import {
+  PersonList,StarshipList,PlanetList,
+  PersonDetails,StarshipDetails,PlanetDetails
+} from '../main-component';
 
 import './app.css'
-import ItemList from '../item-list/item-list';
-import PeoplePage from '../people-page/people-page';
+
 
 
 
@@ -78,45 +82,30 @@ export default class App extends React.Component{
         </ItemDetails>
     )
  
-    const peopleList = (
-      <ItemList
-        getData={getAllPeople}
-      >
-      </ItemList>
-    )
 
     return <div className="main-content stars">
           <div className="twinkling"></div>  
 
     <Header/>
     {planet}
-    {/* <div className="button-block">
-    <button className="toggle-button" onClick={this.toggleRandomPlanet}>
-      Toggle
-    </button>
-    </div> */}
-    {/* <PeoplePage/> */}
-
-      {/* <Row
-        leftRow={personDetails}
-        rightRow={starshipDetails}
-      /> */}
-      {/* <Row 
-        leftRow={peopleList}
-        rightRow={peopleList}
-        /> */}
 
 
-        <ItemList
-          getData={this.swapiService.getAllPeople}
-          onItemSelected={()=>{}}>
-            {({name}) => <span>{name}</span>}
-          </ItemList>
-          <ItemList
-          getData={this.swapiService.getAllPeople}
-          onItemSelected={()=>{}}>
-            {({name}) => <span>{name}</span>}
-          </ItemList>
+      <PersonDetails itemId={3}/>
+      <PlanetDetails itemId={3}/>
+      <StarshipDetails itemId={9}/>
+
+
+
+      <PersonList getData={getAllPeople}>
+        {({name}) => <span>{name}</span>}
+      </PersonList>
+      <PlanetList getData={getAllPeople}>
+        {({name}) => <span>{name}</span>}
+      </PlanetList>
+      <StarshipList getData={getAllPeople}>
+        {({name}) => <span>{name}</span>}
+      </StarshipList>
+
         
      </div>
 }
