@@ -7,6 +7,7 @@ import ItemDetails, { Record } from '../item-details';
 import ErrorIndicator from '../error-indicator';
 import SwapiService from '../../service/service';
 
+import { ServiceProvider } from '../service-context';
 
 import {
   PersonList,StarshipList,PlanetList,
@@ -83,7 +84,9 @@ export default class App extends React.Component{
     )
  
 
-    return <div className="main-content stars">
+    return <ServiceProvider value={this.swapiService}>
+
+          <div className="main-content stars">
           <div className="twinkling"></div>  
 
     <Header/>
@@ -106,5 +109,6 @@ export default class App extends React.Component{
 
         
      </div>
+     </ServiceProvider>
 }
 }
