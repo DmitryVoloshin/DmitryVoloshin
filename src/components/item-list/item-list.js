@@ -1,8 +1,11 @@
 import React from 'react';
-import Loader from '../loader';
 
+import SwapiService from '../../service/service';
+import { withData } from '../HOC';
 
 import './item-list.css'
+
+
 
 
 const ItemList = ( props ) =>{
@@ -30,33 +33,6 @@ const ItemList = ( props ) =>{
 }
 
 
+const { getAllPeople } = new SwapiService()
 
-const withData = ( View ) =>{
-  return class extends React.Component {
-    state ={
-      data:null,
-  };
-  componentDidMount(){
-
-      const { getData } = this.props;
-
-        getData().then((data)=>{
-              this.setState({
-                  data
-              });
-          });
-  }
-    render(){
-
-      const { data } = this.state;
-     
-      if(!data){
-          return <Loader/>
-      };
-
-      return <View {...this.props} data={data}/>
-    }
-  }
-};
-
-export default withData(ItemList);
+export default withData(ItemList,getAllPeople);
