@@ -96,15 +96,13 @@ export default class App extends React.Component{
 
 
 
-      <PersonList getData={getAllPeople}>
-        {({name}) => <span>{name}</span>}
-      </PersonList>
-      <PlanetList getData={getAllPeople}>
-        {({name}) => <span>{name}</span>}
-      </PlanetList>
-      <StarshipList getData={getAllPeople}>
-        {({name}) => <span>{name}</span>}
-      </StarshipList>
+      <PersonList/>
+     
+      <PlanetList/>
+ 
+
+      <StarshipList/>
+ 
 
         
      </div>
