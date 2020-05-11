@@ -4,29 +4,22 @@ import ItemDetails,{ Record } from '../item-details';
 
 import { ServiceConsumer } from '../service-context';
 
+import { withService } from '../HOC';
 
-const PersonDetails = ( {itemId} ) =>{
-
-    return (
-        <ServiceConsumer>
-            {
-                ({getPerson,getPersonImage}) => {
-                    return(
-                        <ItemDetails 
-                        itemId={itemId}
-                        getData={getPerson}
-                        getImage={getPersonImage}>
-                  
-                          <Record field="gender" label="Gender" />
-                          <Record field="eyeColor" label="Eye Color" />
-                  
-                        </ItemDetails>
-                    )
-                }
-            }
-        </ServiceConsumer>
+const PersonDetails = ( {itemId , swapiService} ) =>{
+    const { getPerson,getPersonImage } = swapiService
+    return(       
+        <ItemDetails 
+        itemId={itemId}
+        getData={getPerson}
+        getImage={getPersonImage}>
+  
+          <Record field="gender" label="Gender" />
+          <Record field="eyeColor" label="Eye Color" />
+  
+        </ItemDetails>
     )
 
 }
 
-export { PersonDetails }
+export default withService(PersonDetails)
