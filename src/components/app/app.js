@@ -3,7 +3,7 @@ import React from 'react';
 
 import Header from './../header';
 import RandomPlanet from '../random-planet';
-import ItemDetails from '../item-details';
+import ItemDetails, { Record } from '../item-details';
 import ErrorIndicator from '../error-indicator';
 import SwapiService from '../../service/service';
 import Row from '../row';
@@ -52,14 +52,27 @@ export default class App extends React.Component{
 
     //NEW
     const personDetails = (
-      <ItemDetails itemId={2}
+      <ItemDetails 
+      itemId={2}
       getData={getPerson}
-      getImage={getPersonImage}/>
+      getImage={getPersonImage}>
+
+        <Record field="gender" label="Gender" />
+        <Record field="eyeColor" label="Eye Color" />
+
+      </ItemDetails>
     )
     const starshipDetails = (
-      <ItemDetails itemId={5}
+      <ItemDetails 
+      itemId={5}
       getData={getStarship}
-      getImage={getStarshipImage}/>
+      getImage={getStarshipImage}>
+
+        <Record field="model" label="Model"/>
+        <Record field="length" label="Length"/>
+        <Record field="costInCredits" label="Cost"/>
+
+        </ItemDetails>
     )
  
 
