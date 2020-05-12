@@ -1,17 +1,9 @@
 import React from 'react';
 import ItemList from '../item-list';
-import { withData,withService } from '../HOC';
+import { withData,withService,withChildFunction } from '../HOC';
 
 
-const withChildFunction =  (fn )=> ( Wrapped ) =>{
-    return ( props ) =>{
-        return(
-            <Wrapped {...props}>
-                {fn}
-            </Wrapped>
-        )
-    };
-};
+
 
 
 const renderName = ({ name }) => <span>{name}</span>;

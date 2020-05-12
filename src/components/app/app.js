@@ -9,7 +9,7 @@ import { ServiceProvider } from '../service-context';
 
 
 import './app.css'
-import {PeoplePage, PlanetPage, StarshipPage} from '../pages';
+import {PeoplePage, PlanetPage} from '../pages';
 
 
 
@@ -35,8 +35,7 @@ export default class App extends React.Component{
 
                 <PeoplePage/>
                 <PlanetPage/>
-                <StarshipPage/>
-
+        
 
         
             </div>
