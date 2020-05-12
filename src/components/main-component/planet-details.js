@@ -2,8 +2,6 @@ import React from 'react';
 
 import ItemDetails,{ Record } from '../item-details';
 
-import { ServiceConsumer } from '../service-context';
-
 import { withService } from '../HOC'
 
 

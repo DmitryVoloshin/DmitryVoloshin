@@ -8,13 +8,11 @@ export default class PeoplePage extends React.Component {
         state ={
             selectedItem:null
         }
-
         onItemSelected = ( selectedItem ) =>{
             this.setState({
                 selectedItem:selectedItem
             })
         }
-
         render(){
 
             const { selectedItem } = this.state

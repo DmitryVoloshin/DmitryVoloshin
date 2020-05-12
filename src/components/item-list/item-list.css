@@ -14,7 +14,7 @@
     padding-top: 20px;
 }
 .list-group_item{
-    font-size: 35px;
+    font-size: inherit;
     padding-top: 12px;
     cursor: pointer;
     padding-left: 18px;
