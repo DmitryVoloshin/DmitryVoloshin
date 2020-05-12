@@ -38,7 +38,7 @@ export default class ItemDetails extends React.Component{
     //lifecycle end
 
     updateItem(){
-        const { itemId,getData,getImage} = this.props;
+        const { itemId,getData,getImageUrl} = this.props;
         if(!itemId){
             return;
         }
@@ -46,7 +46,7 @@ export default class ItemDetails extends React.Component{
             .then((item)=>{
                 this.setState({
                     item,
-                    image:getImage(item)
+                    image:getImageUrl(item)
                 })
             })
     };

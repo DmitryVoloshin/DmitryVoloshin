@@ -4,22 +4,15 @@ import ItemDetails,{ Record } from '../item-details';
 
 import { ServiceConsumer } from '../service-context';
 
+import { withService } from '../HOC'
 
 
 
 
-const PlanetDetails = ( { itemId } ) =>{
+const PlanetDetails = ( props ) =>{
     
-    return (
-        <ServiceConsumer>
-            {
-                ({getPlanet,getPlanetImage})=>{
                     return(
-                        <ItemDetails 
-                        itemId={itemId}
-                        getData={getPlanet}
-                        getImage={getPlanetImage}>
-                  
+                        <ItemDetails {...props}>
                           <Record field="population" label="Population"/>
                           <Record field="rotationPeriod" label="Rotation Period"/>
                           <Record field="diameter" label="Diameter"/>
@@ -27,13 +20,14 @@ const PlanetDetails = ( { itemId } ) =>{
                           </ItemDetails>
                     )
                 }
-            }
-        </ServiceConsumer>
-    )
+     
 
+
+const mapMethodsToProps = (swapiService) =>{
+    return{
+        getData:swapiService.getPlanet,
+        getImageUrl:swapiService.getPlanetImage,
+    }
 }
 
-
-export {
-    PlanetDetails
-}
+export default withService(PlanetDetails,mapMethodsToProps);
