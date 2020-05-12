@@ -3,13 +3,13 @@ import Loader from '../loader'
 import ErrorBoundry from '../error-boundry';
 
 
-const withData = ( View ,getData ) =>{
+const withData = ( View ) =>{
     return class extends React.Component {
       state ={
         data:null,
     };
     componentDidMount(){
-          getData().then((data)=>{
+          this.props.getData().then((data)=>{
                 this.setState({
                     data
                 });
