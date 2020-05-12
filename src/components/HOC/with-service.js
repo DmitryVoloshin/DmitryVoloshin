@@ -1,7 +1,7 @@
 import React from 'react';
 import { ServiceConsumer } from '../service-context';
 
-const withService = (Wrapped,mapMethodsToProps) =>{
+const withService = ( mapMethodsToProps ) => (Wrapped) =>{
     return (props) =>{
         return (<ServiceConsumer>
             {

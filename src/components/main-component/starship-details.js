@@ -29,4 +29,4 @@ const matMethodsToProps = (swapiService) =>{
     }
 }
 
-export default withService(StarshipDetails,matMethodsToProps)
+export default withService(matMethodsToProps)(StarshipDetails);
