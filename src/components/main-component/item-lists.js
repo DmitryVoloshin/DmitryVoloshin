@@ -3,9 +3,6 @@ import ItemList from '../item-list';
 import { withData,withService,withChildFunction } from '../HOC';
 
 
-
-
-
 const renderName = ({ name }) => <span>{name}</span>;
 const renderModelAndName = ({model,name}) => <span>{name}({model})</span>
 
