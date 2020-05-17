@@ -36,7 +36,7 @@ export default class App extends React.Component{
                 <PeoplePage/>
                 <PlanetPage/>
 
-        
+            init
             </div>
             </ServiceProvider>
     )
