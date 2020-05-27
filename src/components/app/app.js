@@ -7,9 +7,10 @@ import SwapiService from '../../service/service';
 
 import { ServiceProvider } from '../service-context';
 
+import { BrowserRouter as Router,Route} from 'react-router-dom';
 
 import './app.css'
-import {PeoplePage, PlanetPage} from '../pages';
+import {PeoplePage, PlanetPage, StarshipPage} from '../pages';
 
 
 
@@ -26,19 +27,23 @@ export default class App extends React.Component{
 
     return (
     <ServiceProvider value={this.swapiService}>
+        <Router>
           <div className="main-content stars">
           <div className="twinkling"></div>  
 
             <Header/>
             <RandomPlanet/>
 
+            <Route path="/people" component={PeoplePage}/>
+            <Route path="/planets" component={PlanetPage}/>
+            <Route path="/starships" component={StarshipPage}/>
+      
+            {/* <PeoplePage/>
+            <PlanetPage/> */}
 
-                <PeoplePage/>
-                <PlanetPage/>
-
-            init
-            </div>
-            </ServiceProvider>
+          </div>
+        </Router>
+    </ServiceProvider>
     )
 }
 }
