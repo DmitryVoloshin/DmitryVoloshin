@@ -38,8 +38,7 @@ export default class App extends React.Component{
             <Route path="/planets" component={PlanetPage}/>
             <Route path="/starships" component={StarshipPage}/>
       
-            {/* <PeoplePage/>
-            <PlanetPage/> */}
+    
 
           </div>
         </Router>
