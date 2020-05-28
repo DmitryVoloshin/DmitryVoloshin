@@ -7,7 +7,7 @@ const Header = ( ) =>{
 
         <div className="head-logo">
             <h2 className="main-link">
-                <a href="#">All about SW</a>
+                <Link to="/">Star Wars</Link>
             </h2>
         </div>
 
