@@ -37,7 +37,7 @@ export default class App extends React.Component{
             <Route path="/people" component={PeoplePage}/>
             <Route path="/planets" component={PlanetPage}/>
             <Route path="/starships" exact component={StarshipPage}/>  
-    
+            <RandomPlanet/>
 
           </div>
         </Router>
