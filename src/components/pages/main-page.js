@@ -1,13 +1,14 @@
 import React from 'react';
-
+import './main-page.css'
 
 const MainPage = ( ) =>{
 
-    const marginLeft = {
-        margin:'40px'
-    }
-
-    return <h2 style={marginLeft}>Main page!</h2>
+    return <div className="main-page_body">
+        <div className="main-page_head">
+            <div className="main-page_about"><p className="qst">?</p></div>
+        </div>
+    </div>
 }
 
 export default MainPage
+

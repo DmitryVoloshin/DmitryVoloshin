@@ -31,13 +31,13 @@ export default class App extends React.Component{
           <div className="main-content stars">
           <div className="twinkling"></div>  
 
-            <Header/>
-            <RandomPlanet/>
+            {/* <Header/>
+            <RandomPlanet/> */}
             <Route path="/" component={MainPage} exact/>
             <Route path="/people" component={PeoplePage}/>
             <Route path="/planets" component={PlanetPage}/>
             <Route path="/starships" exact component={StarshipPage}/>  
-            <RandomPlanet/>
+        
 
           </div>
         </Router>
