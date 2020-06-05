@@ -10,7 +10,7 @@ import { ServiceProvider } from '../service-context';
 import { BrowserRouter as Router,Route} from 'react-router-dom';
 
 import './app.css'
-import {PeoplePage, PlanetPage, StarshipPage, MainPage} from '../pages';
+import {PeoplePage, PlanetPage, StarshipPage, MainPage, StartPage} from '../pages';
 
 
 
@@ -35,7 +35,8 @@ export default class App extends React.Component{
             <Route path="/" component={MainPage} exact/>
             <Route path="/people" component={PeoplePage}/>
             <Route path="/planets" component={PlanetPage}/>
-            <Route path="/starships" exact component={StarshipPage}/>  
+            <Route path="/starships" exact component={StarshipPage}/>
+            <StartPage/>  
       
 
           </div>
