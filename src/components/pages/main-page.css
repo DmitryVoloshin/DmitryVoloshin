@@ -1,3 +1,5 @@
+@import url(https://allfont.ru/allfont.css?fonts=star-jedi);
+
 .main-page_about{
     display: flex;
     margin: 60px 0px 0px 280px ;
@@ -10,3 +12,23 @@
     background: green;
     color: white;
 };
+.logo_word{
+    /* font-family: 'Star Jedi', arial; */
+    color: khaki;
+
+}
+.main-page_logo{
+    text-align: center;
+    font-family: 'Star Jedi', arial;
+    font-size: 115px;
+    padding-top: 100px;
+    /* padding-left: 500px; */
+    color: rgb(0, 0, 0);
+    text-shadow: yellow 1px 1px 0, yellow -1px -1px 0, 
+    yellow -1px 1px 0, yellow 1px -1px 0;
+}
+.logo_small{
+    font-size: 0.9rem;
+    color: white;
+    text-shadow: none;
+}
