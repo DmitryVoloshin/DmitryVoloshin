@@ -3,8 +3,6 @@ import { Link } from 'react-router-dom'
 
 const StartPage = ( ) =>{
 
-
-
     return <div>
                 <ul>
                     <li >
