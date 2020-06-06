@@ -1,6 +1,7 @@
 import React from 'react';
 import './main-page.css'
 import Header from '../header';
+import StartPage from './start-page';
 
 const MainPage = ( ) =>{
 

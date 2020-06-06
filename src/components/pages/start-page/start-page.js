@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 import './start-page.css'
+import MainPage from '../main-page';
 
 const StartPage = ( ) =>{
 

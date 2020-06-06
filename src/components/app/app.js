@@ -31,12 +31,12 @@ export default class App extends React.Component{
           <div className="main-content stars">
           <div className="twinkling"></div>  
 
-            
-            <Route path="/" component={MainPage} exact/>
+            <MainPage/>
+            <Route path="/" component={StartPage} exact/>
             <Route path="/people" component={PeoplePage}/>
             <Route path="/planets" component={PlanetPage}/>
             <Route path="/starships" exact component={StarshipPage}/>
-            <StartPage/>  
+         
       
 
           </div>

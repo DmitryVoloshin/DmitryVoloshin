@@ -4,8 +4,6 @@
     border: 1px solid rgb(255, 255, 255);
     background-color: rgba(179, 168, 168, 0);
     border-radius: 10px;
-    height: 250px;
-
 }
 .list-item{
     padding-bottom: 10px;
@@ -30,3 +28,8 @@
 .list-group_item:last-child{
     padding-bottom: 10px;
 }
+
+
+/* .item-list_block{
+  
+} */

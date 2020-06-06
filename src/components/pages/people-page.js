@@ -22,6 +22,8 @@ export default class PeoplePage extends React.Component {
                 leftRow={<PersonList onItemSelected={this.onItemSelected}/>}
                 rightRow={<PersonDetails itemId={selectedItem}/>}
               />
+
+            // <PersonList onItemSelected={this.onItemSelected}/>
             );
         }
 }
