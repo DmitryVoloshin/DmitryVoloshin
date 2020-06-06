@@ -9,22 +9,22 @@ const StartPage = ( ) =>{
                 <ul className="start-page_list">
                     <li>
                         <Link to="/people">
-                            <div className="list-block_item">
-                                <span className="list-block_name">GOGO</span>
+                            <div className="list-block_item character-item">
+                                <span className="list-block_name">CHARACTER</span>
                             </div>
                         </Link>
                     </li>
                     <li>
                         <Link to="/people">
-                            <div className="list-block_item">
-                                <span className="list-block_name">GOGO</span>
+                            <div className="list-block_item starship-item">
+                                <span className="list-block_name">STARSHIP</span>
                             </div>
                         </Link>
                     </li>
                     <li>
                         <Link to="/people">
-                            <div className="list-block_item">
-                                <span className="list-block_name">GOGO</span>
+                            <div className="list-block_item planet-item">
+                                <span className="list-block_name">PLANET</span>
                             </div>
                         </Link>
                     </li>
