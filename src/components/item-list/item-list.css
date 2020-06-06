@@ -33,5 +33,11 @@
 .item-list_block{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
+  margin: 20px 150px 50px 150px;
+}
+.list-group_item{
+    border:  1px solid white;
+    width: 220px;
+    margin-top: 20px;
 }
