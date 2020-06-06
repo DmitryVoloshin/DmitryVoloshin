@@ -64,11 +64,11 @@ const ItemList = ( props ) =>{
         });
 
     return (
-      <div className="list-group_block">
+      // <div className="list-group_block">
         <ul className="item-list_block">
           {items}
         </ul>
-      </div>
+      // </div>
     )
 }
 

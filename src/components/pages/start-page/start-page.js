@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 import './start-page.css'
-import MainPage from '../main-page';
 
 const StartPage = ( ) =>{
 
@@ -16,14 +15,14 @@ const StartPage = ( ) =>{
                         </Link>
                     </li>
                     <li>
-                        <Link to="/people">
+                        <Link to="/starships">
                             <div className="list-block_item starship-item">
                                 <span className="list-block_name">STARSHIP</span>
                             </div>
                         </Link>
                     </li>
                     <li>
-                        <Link to="/people">
+                        <Link to="/planets">
                             <div className="list-block_item planet-item">
                                 <span className="list-block_name">PLANET</span>
                             </div>
