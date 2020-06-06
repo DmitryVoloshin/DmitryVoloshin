@@ -1,4 +1,4 @@
-.item-list_block{
+/* .item-list_block{
     margin: 30px 30px 30px 30px;
     width: 35%;
     border: 1px solid rgb(255, 255, 255);
@@ -27,9 +27,11 @@
 
 .list-group_item:last-child{
     padding-bottom: 10px;
-}
-
-
-/* .item-list_block{
-  
 } */
+
+
+.item-list_block{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
