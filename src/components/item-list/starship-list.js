@@ -4,27 +4,29 @@ import './item-list.css'
 import SwapiService from '../../service/service';
 
 
-
-
-const ItemList = ( props ) =>{
+const StarshipList = ( props ) =>{
 
   const swapiService = new SwapiService
 
       const { data ,onItemSelected,children: renderValue } = props
 
+
         const items = data.map((item) => {
           const {id} = item;
           const value = renderValue(item);
-          const img = swapiService.getImage({id})
-          
-        
-          
+          const img = swapiService.getStarshipImage({id})
+            if(img === img){
+                console.log('probl')
+            }
+           
           return (
              
                 <li className="list-group_item"
                     key={id}
                     onClick={() => onItemSelected(id)}>
-            <img src={img} alt="person pic" className="person-details_pic"></img>
+                    
+            <img src={img} className="person-details_pic"></img>
+                
                   {value} 
                 </li>
            
@@ -39,9 +41,9 @@ const ItemList = ( props ) =>{
     )
 }
 
-ItemList.defaultProps = {
+StarshipList.defaultProps = {
     onItemSelected:()=>{}
 }
 
-export default ItemList;
+export default StarshipList;
 
