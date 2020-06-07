@@ -3,6 +3,7 @@ import React from 'react';
 import ItemDetails,{ Record } from '../item-details';
 
 import { withService } from '../HOC'
+import Header from '../header';
 
 
 
@@ -10,12 +11,15 @@ import { withService } from '../HOC'
 const PlanetDetails = ( props ) =>{
     
                     return(
-                        <ItemDetails {...props}>
+                        <div>
+                         <Header/>
+                          <ItemDetails {...props}>
                           <Record field="population" label="Population"/>
                           <Record field="rotationPeriod" label="Rotation Period"/>
                           <Record field="diameter" label="Diameter"/>
                   
                           </ItemDetails>
+                          </div>
                     )
                 }
      
