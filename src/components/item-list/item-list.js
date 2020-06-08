@@ -8,14 +8,14 @@ import SwapiService from '../../service/service';
 
 const ItemList = ( props ) =>{
 
-  const swapiService = new SwapiService
+
 
       const { data ,onItemSelected,children: renderValue } = props
 
         const items = data.map((item) => {
           const {id} = item;
           const value = renderValue(item);
-          const img = swapiService.getImage({id})
+          
           
         
           
@@ -24,7 +24,7 @@ const ItemList = ( props ) =>{
                 <li className="list-group_item"
                     key={id}
                     onClick={() => onItemSelected(id)}>
-            <img src={img} alt="person pic" className="person-details_pic"></img>
+            <img src="" alt="" className="person-details_pic"></img>
                   {value} 
                 </li>
            

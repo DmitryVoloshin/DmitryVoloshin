@@ -1,8 +1,5 @@
 import React from 'react';
 
-
-import Header from './../header';
-import RandomPlanet from '../random-planet';
 import SwapiService from '../../service/service';
 
 import { ServiceProvider } from '../service-context';

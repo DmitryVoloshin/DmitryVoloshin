@@ -59,18 +59,7 @@ export default class SwapiService {
     getPlanetImage = ({id}) =>{
       return `${this._imageBase}/planets/${id}.jpg`
     }
-    getImage = async (url) =>{
-       const res = await fetch(`${this._apiBase}${url}`);
-    }
-    getResource = async (url) => {
-      const res = await fetch(`${this._imageBase}${url}`);
-  
-      if (!res.ok) {
-        throw new Error(`Could not fetch ${url}` +
-          `, received ${res.status}`)
-      }
-      return await res.json();
-    };
+ 
 
 
     _extractId = (item) => {
