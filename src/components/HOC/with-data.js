@@ -10,6 +10,8 @@ const withData = ( View ) =>{
         data:null,
         loading:true,
         error:false,
+        //test
+        pict:null,
     };
     componentDidUpdate(prevProps){
       if(this.props.getData !== prevProps.getData){
@@ -24,9 +26,11 @@ const withData = ( View ) =>{
         loading:true,
         error:false
       });
-      this.props.getData().then((data)=>{
+      this.props.getData().then((data,pict)=>{
         this.setState({
             data,
+            //test
+            pict,
             loading:false
         })
     })
@@ -39,7 +43,7 @@ const withData = ( View ) =>{
     }
       render(){
   
-        const { data,loading,error} = this.state;
+        const { data,loading,error,pict} = this.state;
        
         if(loading){
             return <Loader/>
@@ -50,7 +54,7 @@ const withData = ( View ) =>{
         }
   
         return <ErrorBoundry>
-                    <View {...this.props} data={data}/>
+                    <View {...this.props} data={data} pict={pict}/>
                 </ErrorBoundry>
       }
     }

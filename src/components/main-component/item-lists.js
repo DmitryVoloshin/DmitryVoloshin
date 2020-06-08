@@ -19,7 +19,9 @@ const mapStarshipMethodsToProps = ( swapiService ) =>{
 }
 const mapPlanetMethodsToProps = ( swapiService ) =>{
     return{
-        getData:swapiService.getAllPlanets
+        getData:swapiService.getAllPlanets,
+        //just test
+        getImage:swapiService.getPlanetImage
     }
 }
 
