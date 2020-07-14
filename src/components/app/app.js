@@ -34,6 +34,8 @@ export default class App extends React.Component{
           <div className="main-content stars">
           <div className="twinkling">
 
+
+
             <MainPage/>
 
             <Switch>
@@ -67,8 +69,9 @@ export default class App extends React.Component{
             <Redirect to="/"/>
             </Switch>
 
-            </div>  
+            </div>   
           </div>
+     
         </Router>
     </ServiceProvider>
     )
