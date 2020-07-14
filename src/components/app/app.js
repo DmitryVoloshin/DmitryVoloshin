@@ -32,7 +32,7 @@ export default class App extends React.Component{
     <ServiceProvider value={this.swapiService}>
         <Router>
           <div className="main-content stars">
-          <div className="twinkling"></div>  
+          <div className="twinkling">
 
             <MainPage/>
 
@@ -67,6 +67,7 @@ export default class App extends React.Component{
             <Redirect to="/"/>
             </Switch>
 
+            </div>  
           </div>
         </Router>
     </ServiceProvider>
