@@ -5,6 +5,8 @@ const LoginPage = ({ isLoggedIn,onLogin }) =>{
 
     if(isLoggedIn){
         return <Redirect to="/"/>
+
+        
     }
     return(
         <div>

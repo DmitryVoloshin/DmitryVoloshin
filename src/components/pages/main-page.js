@@ -1,17 +1,17 @@
 import React from 'react';
 import './main-page.css'
-import Header from '../header';
-import StartPage from './start-page';
+import LoginHeader from '../login-header';
+import LoginPage from './login-page';
 
-const MainPage = ( ) =>{
+const MainPage = ( {isLoggedIn} ) =>{
 
 
 
     return <div className="main-page_body">
         <div className="main-page_head">
-            {/* <button class="main-page_about" href="#">
-                <p>?</p>
-            </button>  COMMIT FOR BEST TIMES*/}
+    
+  
+
             <div className="main-page_logo">
                 <div className="logo_word"><b>Star</b></div>
                 <div className="logo_small"><p>Visual guide for funs</p></div>

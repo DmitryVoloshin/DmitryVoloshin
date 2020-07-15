@@ -9,6 +9,7 @@ import { BrowserRouter as Router,Route,Switch,Redirect} from 'react-router-dom';
 import './app.css'
 import {PeoplePage, PlanetPage, StarshipPage, MainPage, StartPage, LoginPage, SecretPage} from '../pages';
 import { StarshipDetails, PersonDetails, PlanetDetails } from '../main-component';
+import LoginHeader from '../login-header';
 
 
 
@@ -24,6 +25,9 @@ export default class App extends React.Component{
     onLogin = ( ) =>{
       this.setState({isLoggedIn:true})
     }
+    onLogout = ( ) =>{
+      this.setState({isLoggedIn:false})
+    }
 
   render(){
       const { isLoggedIn } = this.state
@@ -35,7 +39,7 @@ export default class App extends React.Component{
           <div className="twinkling">
 
 
-
+            <LoginHeader isLoggedIn={isLoggedIn}/>
             <MainPage/>
 
             <Switch>
@@ -63,8 +67,9 @@ export default class App extends React.Component{
 
 
             <Route path="/login" render={()=>(<LoginPage isLoggedIn={isLoggedIn}
-             onLogin={this.onLogin}/>)}/>
+             onLogin={this.onLogin} onLogout={this.onLogout}/>)}/>
             <Route path="/secret" render={()=>(<SecretPage isLoggedIn={isLoggedIn}/>)}/>
+
             
             <Redirect to="/"/>
             </Switch>
