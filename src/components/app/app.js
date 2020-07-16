@@ -25,7 +25,7 @@ export default class App extends React.Component{
     onLogin = ( ) =>{
       this.setState({isLoggedIn:true})
     }
-    onLogout = ( ) =>{
+    onLogOut = ( ) =>{
       this.setState({isLoggedIn:false})
     }
 
@@ -39,7 +39,7 @@ export default class App extends React.Component{
           <div className="twinkling">
 
 
-            <LoginHeader isLoggedIn={isLoggedIn}/>
+            <LoginHeader isLoggedIn={isLoggedIn} onLogOut={this.onLogOut}/>
             <MainPage/>
 
             <Switch>

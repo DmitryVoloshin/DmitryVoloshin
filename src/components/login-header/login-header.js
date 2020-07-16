@@ -1,25 +1,40 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom'
 
 import './login-header.css'
+import dmaul from './../../img/dmaul.png'
 
-const LoginHeader = ({ isLoggedIn }) =>{
+
+const LoginHeader = ({ isLoggedIn,onLogOut }) =>{
 
 
 
         if(isLoggedIn){
-            return <h2>hey</h2>
+            return(
+                <ul className="login-header_list">
+                <li className="login-header_item">
+                       <img src={dmaul} className="header-avatar"></img>
+                       <p>Darth Maul</p>
+                </li>
+                <li className="login-header_item">
+                        <button onClick={onLogOut} className="logout-button">Log out</button>
+                </li>
+                <li className="login-header_item">
+                    <Link to="/secret/" className="secret-color">Secret</Link>
+                </li>
+                </ul>
+                )
         }
     return(
-                  <h3>by</h3>
-            // <ul className="login-header_list">
-            // <li className="login-header_item">
-            //         {/* <Link to="/login/">Login</Link> */}sss
-            // </li>
-            // <li className="login-header_item">
-            //         item?
-            // </li>
-            // </ul>
+        
+            <ul className="login-header_list">
+            <li className="login-header_item">
+                    <Link to="/login/">Login</Link>
+            </li>
+            <li className="login-header_item">
+                     <Link to="/secret/">Secret</Link>
+            </li>
+            </ul>
 )
 
 
