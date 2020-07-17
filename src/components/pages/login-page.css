@@ -1,0 +1,10 @@
+.login-page_form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-form{
+    padding-top: 25px;
+}
