@@ -6,6 +6,8 @@ import './login-page.css'
 
 const LoginPage = ({ isLoggedIn,onLogin }) =>{
 
+
+
     if(isLoggedIn){
         return <Redirect to="/"/>
 
@@ -16,9 +18,12 @@ const LoginPage = ({ isLoggedIn,onLogin }) =>{
             <div className="login-page_form">
             <p>Now form working just for visib,and dnt have any logic</p>
             <form className="login-form">
-                <input type="text" placeholder="Admin"/>
+                <label>Name : </label>
+                <input type="text" placeholder="Admin"  className="login-form_input"/>
+                <label>Password : </label>
+                <input type="password" placeholder="Password" className="login-form_input"/>
             </form>
-            <button onClick={onLogin}>
+            <button onClick={onLogin} className="form-send_button">
                 Login
             </button>
             </div>
@@ -27,3 +32,6 @@ const LoginPage = ({ isLoggedIn,onLogin }) =>{
 };
 
 export default LoginPage
+
+
+
